@@ -7,12 +7,19 @@ export default function MainContent({data}) {
    } else {
       return;
    }
-   let img = jD['data'][0]['images']['downsized_medium']['url']
+   let cardArray = jD['data'];
+   console.log(cardArray);
+
    return (
       <>
          <div className="main-container">
             <div className="card-container">
-               <Card imgUrl ={img}  />
+               {
+                  cardArray.map((cardData) => (
+                     <Card imgUrl ={cardData['images']['downsized_medium']['url']} title = {cardData['title']} key={cardData['id']}/>
+                  ))
+               }
+               
             </div>
          </div>
       </>

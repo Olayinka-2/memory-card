@@ -39,3 +39,24 @@ header .container {
 .game-info {
   margin-top: 2.5rem;
 }
+
+.card {
+  background-color: aquamarine;
+  width: 30rem;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.card-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  font-size: 3rem;
+  font-weight: bold;
+}

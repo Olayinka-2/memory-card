@@ -5,7 +5,7 @@ export default function GetGiphy() {
    const [loading, setLoading] = useState(true);
    const [data, setData] = useState([]);
    const apiKey = 'CoAZfk6hEVDA5MBsvDYP3oqPMnlZXx1U';
-   const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=cat&limit=10`;
+   const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=cat&limit=12`;
 
    useEffect(() => {
       const fetchData = async () => {

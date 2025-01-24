@@ -1,11 +1,11 @@
-export default function Header() {
+export default function Header({score}) {
    return (
       <>
          <header>
             <div className="container">
                <div className="game-name">Animal Memory Game</div>
                <div className="game-scoreboard">
-                  <div className="score">Score: 0</div>
+                  <div className="score">Score: {score['scoreCount']}</div>
                   <div className="bestScore">Best score: 0</div>
                </div>
             </div>

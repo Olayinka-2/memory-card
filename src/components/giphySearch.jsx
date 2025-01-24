@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MainContent from "./mainContent";
 
-export default function GetGiphy() {
+export default function GetGiphy({score}) {
    const [loading, setLoading] = useState(true);
    const [data, setData] = useState([]);
    const apiKey = 'CoAZfk6hEVDA5MBsvDYP3oqPMnlZXx1U';
@@ -12,7 +12,10 @@ export default function GetGiphy() {
          try {
             const response = await fetch(apiUrl);
             const jsonData = await response.json();
-            console.log(jsonData);
+
+            if (!response.ok) {
+               throw new Error(`API request failed with status ${response.status}`);
+            }
             setData(jsonData);
          } catch(error) {
             console.log(error);
@@ -25,7 +28,7 @@ export default function GetGiphy() {
    return (
       <>
          {
-            loading ? 'Loading data...': <MainContent data = {data}/>
+            loading ? 'Loading data...': <MainContent data = {data} score = {score}/>
          }
       </>
    )

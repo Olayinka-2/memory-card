@@ -1,27 +1,40 @@
-import { useState } from "react"
+   import { useState } from "react";
 
-export default function Card({imgUrl, title, id, score,reshuffleCards}) {
-   console.log(score)
-   let scoreCount = score['scoreCount'];
+   export default function Card({ imgUrl, title, uniqueID, score, reshuffleCards }) {
+   let scoreCount = score.scoreCount;
+   let setScoreCount = score.setScoreCount;
+   let setClickedBoxes = score.setClickedBoxes;
+   let clickedBoxes = score.clickedBoxes;
+   let  bestScore = score.bestScore;
+   let setBestScore = score.setBestScore;
 
-   let setScoreCount = score['setScoreCount'];
-
-   function handleEvent() {
-      setScoreCount(scoreCount => scoreCount + 1);
+   function handleEvent(event) {
+      if(!clickedBoxes.includes(uniqueID)) {
+         setScoreCount((scoreCount) => scoreCount + 1);
+         setClickedBoxes([
+            ...clickedBoxes,
+            uniqueID
+         ])
+      } else {
+         if(scoreCount > bestScore) {
+            setBestScore(scoreCount)
+         }
+         setScoreCount(0);
+         setClickedBoxes([]);
+      }
       reshuffleCards();
    }
 
-
    return (
       <>
-         <div className="card" key={id} onClick={handleEvent}>
-            <div className="card-img">
-               <img src={imgUrl} alt={title} />
-            </div>
-            <div className="card-title">
-               {title}
-            </div>
+         <div className="card" onClick={handleEvent}>
+         <div className="card-img">
+            <img src={imgUrl} alt={title} />
+         </div>
+         <div className="card-title">
+            {title}
+         </div>
          </div>
       </>
-   )
-}
+   );
+   }

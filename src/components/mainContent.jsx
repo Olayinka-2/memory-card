@@ -5,12 +5,12 @@ export default function MainContent({data, score}) {
    const [shuffledData, setShuffledData] = useState([]);
 
    const shuffleArray = (array) => {
-      let shuffled = [...array];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-         let j = Math.floor(Math.random() * (i + 1));
-         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      return shuffled;
+         let shuffled = [...array];
+         for (let i = shuffled.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+         }
+         return shuffled;
    }
 
    const reshuffleCards = () => {
@@ -31,7 +31,9 @@ export default function MainContent({data, score}) {
                   shuffledData.map((cardData) => (
                      <Card 
                      imgUrl ={cardData['images']['downsized_medium']['url']} 
-                     title = {cardData['title']} key={cardData['id']} 
+                     title = {cardData['title']} 
+                     uniqueID={cardData['id']}
+                     key={cardData['id']} 
                      score = {score}
                      reshuffleCards = {reshuffleCards} />
                   ))

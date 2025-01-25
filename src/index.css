@@ -81,3 +81,15 @@ main {
   font-size: 3rem;
   font-weight: bold;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+footer a {
+  text-decoration: none;
+}

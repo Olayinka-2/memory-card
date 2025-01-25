@@ -1,5 +1,6 @@
 import GetGiphy from "./components/giphySearch";
 import Header from "./components/header";
+import Footer from "./components/footer";
 import { useState } from "react";
 
 
@@ -11,6 +12,7 @@ function App() {
     <>
       <Header  score = {{scoreCount, setScoreCount, bestScore}}/>
       <GetGiphy score = {{scoreCount, setScoreCount, clickedBoxes, setClickedBoxes, bestScore, setBestScore}}/>
+      <Footer />
     </>
   )
 }

@@ -1,26 +1,20 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-
 html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: #f0f0f0;
+  padding: 0;
+  margin: 0;
+  color: #161412;
+}
+
 header {
-  padding:0 2rem;
+  padding:2rem;
   font-size: 1.8rem;
   margin-bottom: 3rem;
+  background-color: #161412;
+  color: #f0f0f0;
 }
 
 header .container {
@@ -42,11 +36,11 @@ header .container {
 }
 
 main {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-weight: 600;
-   font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 3rem;
 }
 .card-container {
   display: flex;
@@ -56,7 +50,8 @@ main {
 }
 
 .card {
-  background-color: aquamarine;
+  background-color: #eaded0; /* Creamy White */
+  color: #333;
   width: 30rem;
   padding: 1rem;
   border-radius: 2rem;

@@ -41,6 +41,13 @@ header .container {
   margin-top: 2.5rem;
 }
 
+main {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: 600;
+   font-size: 3rem;
+}
 .card-container {
   display: flex;
   gap: 4rem 2rem;

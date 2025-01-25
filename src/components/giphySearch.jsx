@@ -4,6 +4,8 @@ import MainContent from "./mainContent";
 export default function GetGiphy({score}) {
    const [loading, setLoading] = useState(true);
    const [data, setData] = useState([]);
+   const [error, setError] = useState(null);
+
    const apiKey = 'CoAZfk6hEVDA5MBsvDYP3oqPMnlZXx1U';
    const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=cat&limit=12`;
 
@@ -18,7 +20,8 @@ export default function GetGiphy({score}) {
             }
             setData(jsonData);
          } catch(error) {
-            console.log(error);
+            setError(error); // Store the error in state
+            console.error('Error fetching data:', error);
          } finally {
             setLoading(false);
          }
@@ -27,9 +30,17 @@ export default function GetGiphy({score}) {
    }, []);
    return (
       <>
+         <main>
          {
-            loading ? 'Loading data...': <MainContent data = {data} score = {score}/>
+            loading ? (
+               <p>Loading data...</p>
+            ) : error ? (
+               <p>Unable to reach API endpoint. Please try again later</p>
+            ) : (
+               <MainContent score = {score} data = {data} />
+            )
          }
+         </main>
       </>
    )
 }

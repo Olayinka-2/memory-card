@@ -3,7 +3,7 @@ export default function Header({score}) {
       <>
          <header>
             <div className="container">
-               <div className="game-name">Animal Memory Game</div>
+               <div className="game-name">Cat Memory Game</div>
                <div className="game-scoreboard">
                   <div className="score">Score: {score['scoreCount']}</div>
                   <div className="bestScore">Best score: {score['bestScore']}</div>
